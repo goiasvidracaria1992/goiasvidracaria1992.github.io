@@ -1,74 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Goias Vidracaria </title>
-  <link rel="stylesheet" href="style.css">
+  <title>Goiás Vidraçaria | Qualidade e Tradição</title>
+  <link rel="icon" type="starticon" href="logo-com-escrita-sem-bk.png">
+
   <style>
-   
+    :root {
+      --laranja: #ff7a00;
+      --verde: #0a7c2f;
+      --verde-escuro: #065d22;
+      --branco: #ffffff;
+      --cinza: #f5f7fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--cinza);
+      color: #123801;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: var(--branco);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      border-bottom: 3px solid var(--laranja);
+    }
+
+    header h1 {
+      color: var(--verde);
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(255,122,0,0.3)), url('https://source.unsplash.com/1600x900/?glass,building');
+      background-size: cover;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--laranja), var(--verde));
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, var(--verde), var(--laranja));
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: var(--verde);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--laranja);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      border-top: 4px solid var(--laranja);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #ddd;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: var(--verde);
+    }
+
+    .info-box {
+      background: var(--branco);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+      border-left: 5px solid var(--laranja);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--verde), var(--laranja));
+      color: white;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.6s;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Goiás Vidraçaria</h1>
-    <nav>
-      <a href="#services">Serviços</a>
-      <a href="#adress">Endereço</a>
-      <a href="#contact">Contato</a>
-    </nav>
-  </header>
 
-  <div class="hero" id="home">
-    <h1>Goiás Vidraçaria</h1>
-    <p>40 anos de tradição em trazer o melhor para nossos clientes.</p>
+<header>
+  <img src="logo-com-escrita-sem-bk.png" alt="Logo" style="width: 100px; height: 120px;">
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#services">Serviços</a>
+    <a href="#contact">Contato</a>
+  </nav>
+</header>
+<br><br><br>
+<section class="hero" id="home">
+  <h2>Excelência em Vidros e Boxes</h2>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, doloribus. Nulla, est incidunt error quibusdam ipsam consequuntur expedita suscipit, quo necessitatibus, at fuga ducimus consequatur eius eveniet culpa similique impedit.</p>
+  <a href="#contact" class="btn">Solicitar Orçamento</a>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Nossos Serviços</h2>
+  <div class="services">
+
+    <div class="card fade">
+      <img src="image1.jpg" alt="Portas Light Holder">
+      <div class="card-content">
+        <h3>Portas Light Holder</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p>
+      </div>
+    </div>
+
+    <div class="card fade">
+      <img src="kkkkkk.jpg" alt="Portas Light Holder">
+      <div class="card-content">
+        <h3>Janelas e sacadas</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p>
+      </div>
+    </div>
+
+    <div class="card fade">
+      <img src="baixados.jpeg" alt="Portas Light Holder">
+      <div class="card-content">
+        <h3>Boxes e armários de pia</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p>
+      </div>
+    </div>
+
   </div>
-  <br> <br> 
-  <section class="services" id="services">
-    <div class="card">
-        <img src="image1.jpg" alt="Inovação">
-        <h3> &nbsp; Modelos Light Holder</h3>
-        <p> Fornecemos a melhor opção do mercado em portas e janelas.</p>
-    </div>
-    <div class="card">
-        <img src=";;;;.jpg" alt="Futuro">
-        <h3> &nbsp; Vidros</h3>
-        <p> Trabalhamos com todos os tipos de vidros e estilos, desde vidros comuns até box de banheiros.</p>
-    </div>
-    <div class="card">
-        <img src="kkkkkk.jpg" alt="Tecnologia">
-        <h3> &nbsp; Portas e Janelas</h3>
-        <p>Trabalhamos com todos os modelos de portas e janelas.</p>
-    </div>
+
 </section>
 
-<br> <br> <br> <br> <br> <br>
-
-<section class="adress" id="adress">
-  <div class="caixa-texto">
- <h2> Endereço </h2>
- <p> Rua 41, N 634 Setor Curumim. Ceres-GO.</p>
- <a href="https://maps.app.goo.gl/v1AcYDzbkwunnSU86" class="botaoendereco">Acesse nossa localização</a>
-</div>
+<section id="aboutus">
+  <h2 class="section-title">Sobre Nós</h2>
+  <div class="info-box fade">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p>
+  </div>
 </section>
 
-<br> <br> <br> <br> <br> <br>
-
-<section class="contact" id="contact">
-  <div class="caixa-texto">
- <h2> Contato </h2>
-    <p> Telefone Fixo: 3307-1122 </p> 
-    <p> Whatsapp: (34) 99139-3944 </p>
-    <p> Antônio: (62) 9 9604 1747</p>
-    <p> Ou podes nos contatar clicando no botão abaixo:</p>
-    <a href="
-    https://wa.me/+5534991393944?text=Ol%C3%A1!%20Est%C3%A1%20%C3%A9%20uma%20mensagem%20autom%C3%A1tica!%20Obrigado%20por%20escolher%20a%20Goi%C3%A1s%20Vidra%C3%A7aria!%20Em%20instantes%20voc%C3%AA%20ser%C3%A1%20atendido%20(a)!
-    " class="botaoendereco">Contate-nos</a>
-</div>
+<section id="contact">
+  <h2 class="section-title">Contato</h2>
+  <div class="info-box fade">
+    <p><strong>Endereço:</strong> Rua 41, Nº 634 - Ceres/GO</p>
+    <p><strong>Telefone:</strong> (62) 3307-1122</p>
+    <p><strong>WhatsApp:</strong> (34) 99139-3944</p>
+    <p><strong>Instagram:</strong> @goiasvidracariaceres</p>
+    <br>
+    <a class="btn" href="https://wa.me/5534991393944">Falar no WhatsApp</a>
+  </div>
 </section>
 
-    <footer>
-    <p>© 2025 Goiás Vidraçaria. Todos os direitos reservados.</p>
-  </footer>
+<footer>
+  <p>© 2026 Goiás Vidraçaria - Todos os direitos reservados</p>
+</footer>
+
+<script>
+
+// Scroll suave
+const links = document.querySelectorAll('nav a');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Animação ao rolar
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+</script>
+
 </body>
 </html>
