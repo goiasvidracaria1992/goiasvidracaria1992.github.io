@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#174b24">
+  <meta name="description" content="Goiás Vidraçaria — portas, janelas, sacadas, boxes e armários de pia em Ceres/GO.">
+  <title>Goiás Vidraçaria | Excelência em Vidros</title>
+  <link rel="icon" type="image/png" href="gv-logo-sem-bg.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #23651f;
+      --green-dark: #123d20;
+      --green-deep: #0d2d19;
+      --orange: #ff9700;
+      --ink: #18251b;
+      --muted: #647067;
+      --paper: #f6f8f4;
+      --white: #fff;
+      --line: #e5ebe2;
+      --shadow: 0 18px 50px rgba(20, 55, 27, .10);
+      --container: 1160px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(20,60,30,.08); }
+    .nav-wrap { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; min-width: 0; }
+    .brand img { width: 190px; height: 76px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { text-decoration: none; color: #344238; font-size: .94rem; font-weight: 700; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .nav-cta { background: var(--green); color: white; padding: 12px 20px; border-radius: 999px; box-shadow: 0 7px 18px rgba(35,101,31,.18); }
+    .nav-links .nav-cta:hover { background: var(--green-dark); color: white; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; color: var(--green-dark); border-radius: 12px; width: 46px; height: 44px; font-size: 1.35rem; cursor: pointer; }
+
+    .hero { position: relative; isolation: isolate; min-height: min(720px, calc(100svh - 86px)); display: grid; align-items: center; overflow: hidden; background: var(--green-deep); color: white; }
+    .hero::before { content: ''; position: absolute; inset: 0; z-index: -2; background: url('image1.jpg') center 52% / cover no-repeat; transform: scale(1.02); }
+    .hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8,35,18,.92) 0%, rgba(12,49,24,.78) 48%, rgba(12,49,24,.32) 100%), linear-gradient(0deg, rgba(8,35,18,.28), transparent 55%); }
+    .hero-content { padding-block: 100px 112px; max-width: 760px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #ffd18b; font-size: .78rem; letter-spacing: .16em; font-weight: 800; text-transform: uppercase; margin-bottom: 22px; }
+    .eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--orange); }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; line-height: 1.15; }
+    .hero h1 { max-width: 740px; font-size: clamp(2.55rem, 6vw, 5rem); letter-spacing: -.055em; font-weight: 800; margin-bottom: 24px; }
+    .hero h1 span { color: var(--orange); }
+    .hero p { max-width: 620px; color: rgba(255,255,255,.84); font-size: clamp(1rem, 1.5vw, 1.13rem); margin-bottom: 34px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 52px; padding: 0 25px; border-radius: 999px; text-decoration: none; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--orange); color: #1f2a1f; box-shadow: 0 12px 28px rgba(255,151,0,.24); }
+    .button-primary:hover { background: #ffad2e; box-shadow: 0 15px 32px rgba(255,151,0,.3); }
+    .button-green { background: var(--green); color: white; }
+    .button-green:hover { background: var(--green-dark); }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 38px; color: rgba(255,255,255,.8); font-size: .88rem; }
+    .hero-note::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 5px rgba(255,151,0,.16); }
+
+    section { padding: 104px 0; }
+    .section-heading { max-width: 650px; margin: 0 auto 52px; text-align: center; }
+    .kicker { color: var(--green); text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 800; margin-bottom: 13px; }
+    .section-heading h2 { font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -.045em; color: var(--green-dark); margin-bottom: 15px; }
+    .section-heading p { color: var(--muted); }
+    .services-section { background: var(--paper); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .service-card { background: white; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(20,55,27,.055); transition: transform .25s ease, box-shadow .25s ease; }
+    .service-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
+    .service-image { height: 235px; overflow: hidden; background: #e8eee5; }
+    .service-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .service-card:hover .service-image img { transform: scale(1.045); }
+    .service-content { padding: 27px 27px 30px; }
+    .service-content h3 { color: var(--green-dark); font-size: 1.24rem; margin-bottom: 12px; }
+    .service-content p { color: var(--muted); font-size: .95rem; }
+    .service-index { color: var(--orange); font-family: 'Manrope', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .12em; margin-bottom: 12px; }
+
+    .about-section { background: white; }
+    .about-layout { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(40px, 8vw, 100px); }
+    .about-mark { position: relative; min-height: 390px; display: grid; place-items: center; background: linear-gradient(145deg, #eef5e9, #f8faf6); border-radius: 28px; overflow: hidden; }
+    .about-mark::before, .about-mark::after { content: ''; position: absolute; border: 1px solid rgba(35,101,31,.12); border-radius: 50%; width: 360px; height: 360px; }
+    .about-mark::after { width: 270px; height: 270px; }
+    .about-mark img { position: relative; z-index: 1; width: min(78%, 300px); mix-blend-mode: multiply; }
+    .about-copy .kicker { text-align: left; }
+    .about-copy h2 { color: var(--green-dark); font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -.045em; margin-bottom: 22px; }
+    .about-copy p { color: var(--muted); margin-bottom: 28px; }
+    .about-accent { width: 58px; height: 4px; background: var(--orange); border-radius: 10px; margin-bottom: 24px; }
+
+    .contact-section { background: #f0f5ed; }
+    .contact-panel { display: grid; grid-template-columns: .85fr 1.15fr; background: white; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); }
+    .contact-intro { background: var(--green-dark); color: white; padding: clamp(32px, 5vw, 58px); position: relative; overflow: hidden; }
+    .contact-intro::after { content: ''; position: absolute; width: 250px; height: 250px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: -100px; bottom: -120px; box-shadow: 0 0 0 35px rgba(255,255,255,.035), 0 0 0 70px rgba(255,255,255,.025); }
+    .contact-intro .kicker { color: #ffd18b; }
+    .contact-intro h2 { font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.04em; margin-bottom: 18px; }
+    .contact-intro p { color: rgba(255,255,255,.75); max-width: 340px; }
+    .contact-details { padding: clamp(30px, 5vw, 58px); display: grid; align-content: center; gap: 23px; }
+    .contact-item { display: grid; grid-template-columns: 44px 1fr; align-items: start; gap: 15px; }
+    .contact-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: #edf5e9; color: var(--green); font-size: 1.15rem; }
+    .contact-item strong { display: block; color: var(--green-dark); font-size: .9rem; margin-bottom: 2px; }
+    .contact-item span, .contact-item a { color: var(--muted); font-size: .95rem; text-decoration: none; overflow-wrap: anywhere; }
+    .contact-item a:hover { color: var(--green); text-decoration: underline; }
+    .contact-action { padding-top: 8px; }
+    footer { background: var(--green-deep); color: rgba(255,255,255,.72); padding: 28px 0; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; color: white; font-weight: 800; }
+    .footer-brand img { width: 54px; height: 54px; object-fit: contain; background: white; border-radius: 10px; }
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+
+    @media (max-width: 900px) {
+      .nav-wrap { min-height: 76px; }
+      .brand img { width: 160px; height: 68px; }
+      .nav-links { gap: 20px; }
+      .hero { min-height: 620px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-layout { gap: 42px; }
+      .about-mark { min-height: 330px; }
+      .contact-panel { grid-template-columns: 1fr 1.2fr; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 36px, var(--container)); }
+      .nav-wrap { min-height: 72px; }
+      .brand img { width: 145px; height: 62px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 22px 24px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 16px 24px rgba(0,0,0,.08); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 5px; }
+      .nav-links .nav-cta { text-align: center; margin-top: 8px; padding: 13px 20px; }
+      .hero { min-height: 630px; min-height: min(700px, calc(100svh - 72px)); }
+      .hero::after { background: linear-gradient(90deg, rgba(8,35,18,.91), rgba(12,49,24,.62)), linear-gradient(0deg, rgba(8,35,18,.32), transparent); }
+      .hero-content { padding-block: 78px 84px; }
+      .hero h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
+      .hero p { font-size: 1rem; }
+      section { padding: 76px 0; }
+      .section-heading { margin-bottom: 34px; }
+      .services-grid { grid-template-columns: 1fr; gap: 18px; }
+      .service-image { height: 230px; }
+      .service-content { padding: 23px; }
+      .about-layout { grid-template-columns: 1fr; gap: 34px; }
+      .about-mark { min-height: 280px; order: 2; }
+      .about-copy { order: 1; }
+      .contact-panel { grid-template-columns: 1fr; }
+      .contact-intro { padding: 34px 28px; }
+      .contact-details { padding: 32px 26px; gap: 20px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .fade { opacity: 1; transform: none; }
+    }
+
+   .nav-wrap {
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+}
+
+.nav-wrap .brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 clamp(240px, 30vw, 380px);
+    height: 100%;
+    min-width: 0;
+}
+
+.nav-wrap .brand #foto {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 90px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+@media (max-width: 768px) {
+    .nav-wrap {
+        min-height: 75px;
+        gap: 12px;
+        justify-content: space-between;
+    }
+
+    .nav-wrap .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 220px;
+    }
+
+    .nav-wrap .brand #foto {
+        width: 100%;
+        height: auto;
+        max-height: 65px;
+        object-fit: contain;
+    }
+
+    .menu-toggle {
+        flex: 0 0 44px;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav-wrap .brand {
+        max-width: 180px;
+    }
+
+    .nav-wrap {
+        gap: 8px;
+    }
+}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Goiás Vidraçaria — início">
+        <img src="gv-com-bg-escrita-sem-bg.png" alt="Goiás Vidraçaria" id="foto">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="nav-links" id="main-nav" aria-label="Navegação principal">
+        <a href="#home">Início</a>
+        <a href="#services">Serviços</a>
+        <a href="#aboutus">Sobre Nós</a>
+        <a class="nav-cta" href="#contact">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Goiás Vidraçaria</div>
+          <h1>Excelência em <span>Vidros</span> e Boxes</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, doloribus. Nulla, est incidunt error quibusdam ipsam consequuntur expedita suscipit, quo necessitatibus, at fuga ducimus consequatur eius eveniet culpa similique impedit.</p>
+          <a href="#contact" class="button button-primary">Solicitar Orçamento <span aria-hidden="true">→</span></a>
+          <div class="hero-note">Atendimento em Ceres/GO</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-heading fade">
+          <div class="kicker">O que fazemos</div>
+          <h2>Nossos Serviços</h2>
+          <p>Conheça algumas das soluções da Goiás Vidraçaria.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card fade">
+            <div class="service-image"><img src="image1.jpg" alt="Portas de vidro em um ambiente residencial" loading="lazy"></div>
+            <div class="service-content"><div class="service-index">01 / SERVIÇO</div><h3>Portas Light Holder</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p></div>
+          </article>
+          <article class="service-card fade">
+            <div class="service-image"><img src="kkkkkk.jpg" alt="Projeto de janelas e sacadas" loading="lazy"></div>
+            <div class="service-content"><div class="service-index">02 / SERVIÇO</div><h3>Janelas e sacadas</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p></div>
+          </article>
+          <article class="service-card fade">
+            <div class="service-image"><img src="baixados.jpeg" alt="Soluções em boxes e armários de pia" loading="lazy"></div>
+            <div class="service-content"><div class="service-index">03 / SERVIÇO</div><h3>Boxes e armários de pia</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="aboutus">
+      <div class="container about-layout">
+        <div class="about-mark fade"><img src="gv-com-bg-escrita-numero-sem-bg.png" alt="Símbolo da Goiás Vidraçaria" loading="lazy"></div>
+        <div class="about-copy fade">
+          <div class="kicker">Quem somos</div>
+          <div class="about-accent"></div>
+          <h2>Sobre Nós</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam eius iure aliquam eligendi debitis neque esse architecto aut aperiam. Velit eveniet laudantium molestias voluptatem atque sunt esse cupiditate laboriosam maiores!</p>
+          <a href="#contact" class="button button-green">Entre em contato <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading fade">
+          <div class="kicker">Vamos conversar</div>
+          <h2>Fale com a gente</h2>
+          <p>Entre em contato para solicitar seu orçamento.</p>
+        </div>
+        <div class="contact-panel fade">
+          <div class="contact-intro">
+            <div class="kicker">Goiás Vidraçaria</div>
+            <h2>Seu projeto começa aqui.</h2>
+            <p>Estamos à disposição para conversar sobre o que você precisa.</p>
+          </div>
+          <div class="contact-details">
+            <div class="contact-item"><div class="contact-icon" aria-hidden="true">⌖</div><div><strong>Endereço</strong><span>Rua 41, Nº 634 - Ceres/GO</span></div></div>
+            <div class="contact-item"><div class="contact-icon" aria-hidden="true">☎</div><div><strong>Telefone</strong><a href="tel:+556233071122">(62) 3307-1122</a></div></div>
+            <div class="contact-item"><div class="contact-icon" aria-hidden="true">◉</div><div><strong>WhatsApp</strong><a href="https://wa.me/5534991393944" target="_blank" rel="noopener noreferrer">(34) 99139-3944</a></div></div>
+            <div class="contact-item"><div class="contact-icon" aria-hidden="true">◎</div><div><strong>Instagram</strong><a href="https://instagram.com/goiasvidracaria1992" target="_blank" rel="noopener noreferrer">@goiasvidracaria1992</a></div></div>
+            <div class="contact-action"><a class="button button-green" href="https://wa.me/5534991393944" target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">↗</span></a></div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.202230394952!2d-49.609057148937545!3d-15.311241120664608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935d3b541c986293%3A0xe88d22114c2be1d6!2zR29pw6FzIFZpZHJhw6dhcmlh!5e0!3m2!1spt-BR!2sbr!4v1794834377190!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="gv-logo.png" alt="" loading="lazy"><span>Goiás Vidraçaria</span></div>
+      <p>© 2026 Goiás Vidraçaria - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+    navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navigation.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menu');
+      menuButton.textContent = '☰';
+    }));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade').forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
